@@ -1,0 +1,36 @@
+# Ignore operating system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE files
+.vscode/
+.idea/
+.eclipse/
+
+# Ignore package manager files
+node_modules/
+vendor/
+output/
+build/
+
+# Ignore log files
+*.log
+*.class
+
+# Ignore compiled files
+*.class
+*.exe
+*.o
+*.obj
+
+# Ignore backup files
+*.bak
+*.tmp
+
+# Ignore configuration files
+config.json
+config.xml
+
+# Ignore database files
+*.db
+*.sqlite
