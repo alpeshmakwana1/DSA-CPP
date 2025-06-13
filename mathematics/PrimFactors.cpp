@@ -1,5 +1,6 @@
 /*
-Prime factor is the factor of the given number which is a prime number. Factors are the numbers you multiply together to get another number. In simple words, prime factor is finding which prime numbers multiply together to make the original number.
+Prime factor is the factor of the given number which is a prime number. Factors are the numbers you multiply 
+together to get another number. In simple words, prime factor is finding which prime numbers multiply together to make the original number.
 
 Example: The prime factors of 15 are 3 and 5 (because 3×5=15, and 3 and 5 are prime numbers).
 */
@@ -11,7 +12,7 @@ using namespace std;
     Time Complexity: O(√n) — We still check up to the square root of n, but with a smaller constant factor due to the skipping of many numbers.
     Space Complexity: O(1) — The space complexity remains constant.
 */
-bool isPrimeMostEfficient(int n)
+bool isPrime(int n)
 {
     if (n == 1)
         return false;           // 1 is not prime
@@ -33,7 +34,6 @@ bool isPrimeMostEfficient(int n)
     return true;
 }
 
-
 //Naive approach
 /*
     Time Complexity: O(n3/2 x log n)
@@ -41,7 +41,7 @@ bool isPrimeMostEfficient(int n)
 */
 void printPrimeFactors_Naive(int n){
     for(int i = 2 ; i < n ; i++){
-        if(isPrimeMostEfficient(i)){
+        if(isPrime(i)){
             int x = i ;
             while (n%x ==0)
             {
@@ -88,7 +88,7 @@ void printPrimeFactors_Efficient(int n){
 
 
 int main(){
-    printPrimeFactors_Naive(150);
+    // printPrimeFactors_Naive(150);
     printPrimeFactors_Efficient(150);
     return 0;
 }

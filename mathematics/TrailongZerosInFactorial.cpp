@@ -16,7 +16,7 @@ long factorialIterative(int n){
     
 }
 
-//Naiver Approach
+//Naive Approach
 //Finc the factorial of a number and then count zeros
 //Time Complexity O(n)
 
