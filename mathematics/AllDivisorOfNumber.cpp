@@ -37,9 +37,6 @@ void printAllDivisorOfNumber_Efficient(int n)
     if (n == 0)
         cout << "0 is not natural number";
 
-    // if(n>=1)
-    //     cout << "1 " ;
-
     // Loop throgh all numbers from 1 to N
     for (int i = 1; i * i <= n; i++)
     {
@@ -64,9 +61,6 @@ void printAllDivisorOfNumber_Efficient_Sorted(int n)
 
     if (n == 0)
         cout << "0 is not natural number";
-
-    // if(n>=1)
-    //     cout << "1 " ;
 
     // Loop throgh all numbers from 1 to sqrt(n)
     //Note : We are not cosideting the number whose squre is equal to n ,in this loop
