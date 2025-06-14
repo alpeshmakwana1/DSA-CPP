@@ -6,6 +6,7 @@ using namespace std;
     Time Complexity Θ(n)
     Space Comlexity O(1)
 */
+int abc = 0 ;
 int pow(int n, int p)
 {
     if (n == 0)
@@ -18,6 +19,7 @@ int pow(int n, int p)
     return res;
 }
 
+
 // Optimized Approach
 /*
     Time Complexity Θ(log n)
@@ -25,9 +27,11 @@ int pow(int n, int p)
 */
 int pow1(int n, int p)
 {
-    if (n == 0)
+    abc++ ;
+    if (n == 0)         //If number is 0 return 0 ,irrespective of power
         return 0;
-    if (p == 0)
+
+    if (p == 0)         //0 Power of any number is 1
         return 1;
 
     int temp = pow1(n, p / 2);
@@ -62,6 +66,8 @@ int power_Iterative(int x, int y)
 
 int main()
 {
-    cout << "Power is " << power_Iterative(3, 3) << endl;
+    // cout << "Power is " << power_Iterative(3, 3) << endl;
+    cout << "Power is " << pow1(3, 2) << endl;
+    cout << "abc" << abc << endl ;
     return 0;
 }

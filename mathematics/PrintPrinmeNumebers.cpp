@@ -7,7 +7,7 @@ using namespace std;
     Space Complexity: O(1) — The space complexity remains constant.
 */
 
-bool isPrimeMostEfficient(int n)
+bool isPrime(int n)
 {
     if (n == 1)
         return false; // 1 is not prime
@@ -39,7 +39,7 @@ void printPrimeNumber_Naive(int n)
 
     for (int i = 1; i <= n; i++)
     {
-        if (isPrimeMostEfficient(i))
+        if (isPrime(i))
         {
             cout << i << " ";
         }
@@ -51,30 +51,27 @@ void printPrimeNumber_Naive(int n)
     Time Complexity O(n log log n)
 */
 /*
-    According to the algorithm we will mark all the numbers which are divisible by 2 and are greater than or equal to the square of it.
+    According to the algorithm, we will take a array and initially consider all the numbers as prime
+    we will mark all the numbers which are divisible by 2 and are greater than or equal to the square of it as false.
     Next we move to our next unmarked number 3 and mark all the numbers which are multiples of 3 and are greater than or equal to the square of it.
     We move to our next unmarked number 5 and mark all multiples of 5 and are greater than or equal to the square of it.
     Continue this Process unit i*i <= n
 */
 void printPrimeNumbers_Eratosthness(int n)
 {
-    vector<bool> isPrime(n + 1, true);
-
     if (n <= 1)
     {
         cout << "No Prime numbers in range till" << n << endl;
     }
 
-    int cnt_outer_before = 0, cnt_outer_after = 0, cnt_inner = 0;
+    vector<bool> isPrime(n + 1, true);
+
     for (int i = 2; i * i <= n; i++)
     {
-        cnt_outer_before++;
         if (isPrime[i])
         {
-            cnt_outer_after++;
             for (int j = i * 2; j <= n; j = j + i)
             {
-                cnt_inner++;
                 isPrime[j] = false;
             }
         }
@@ -87,10 +84,6 @@ void printPrimeNumbers_Eratosthness(int n)
             cout << i << " ";
         }
     }
-
-    cout << endl
-         << "cnt_outer_before " << cnt_outer_before << " cnt_outer_after " << cnt_outer_after << " cnt_inner " << cnt_inner << endl;
-    cout << endl;
 }
 
 // Sieve of Eratosthenes Algorithm
@@ -107,23 +100,19 @@ void printPrimeNumbers_Eratosthness(int n)
 
 void printPrimeNumbers_Optimization2(int n)
 {
-    vector<bool> isPrime(n + 1, true);
-
     if (n <= 1)
     {
         cout << "No Prime numbers in range till" << n << endl;
     }
 
-    int cnt_outer_before = 0, cnt_outer_after = 0, cnt_inner = 0;
+    vector<bool> isPrime(n + 1, true);
+
     for (int i = 2; i * i <= n; i++)
     {
-        cnt_outer_before++;
         if (isPrime[i])
         {
-            cnt_outer_after++;
             for (int j = i * i; j <= n; j = j + i)
             {
-                cnt_inner++;
                 isPrime[j] = false;
             }
         }
@@ -136,10 +125,6 @@ void printPrimeNumbers_Optimization2(int n)
             cout << i << " ";
         }
     }
-
-    cout << endl
-         << "cnt_outer_before " << cnt_outer_before << " cnt_outer_after " << cnt_outer_after << " cnt_inner " << cnt_inner << endl;
-    cout << endl;
 }
 
 // Sieve of Eratosthenes Algorithm
@@ -184,7 +169,7 @@ void printPrimeNumbers_Optimization3(int n)
 }
 int main()
 {
-    int n = 2500;
+    int n = 110;
     cout << "Prime numbers in range " << n << " are : ";
     printPrimeNumbers_Eratosthness(n);
     return 0;
