@@ -70,12 +70,12 @@ void printPrimeFactors_Efficient(int n){
         n = n/3 ;
     }
 
-    for(int i = 5 ; i <= n ; i+=6){
-        if(n%i == 0){
+    for(int i = 5 ; i*i <= n ; i+=6){
+        while(n%i == 0){
             cout << i << endl ;
             n = n/i ;
         }
-        if(n%(i+2) == 0){
+        while(n%(i+2) == 0){
             cout << i+2 << endl ;
             n = n/(i+2) ;
         }
@@ -89,6 +89,6 @@ void printPrimeFactors_Efficient(int n){
 
 int main(){
     // printPrimeFactors_Naive(150);
-    printPrimeFactors_Efficient(150);
+    printPrimeFactors_Efficient(125);
     return 0;
 }
