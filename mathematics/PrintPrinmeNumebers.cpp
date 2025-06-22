@@ -156,21 +156,12 @@ void printPrimeNumbers_Optimization3(int n)
             }
         }
     }
-
-    for (int i = 2; i <= n; i++)
-    {
-        if (isPrime[i])
-        {
-            cout << i << " ";
-        }
-    }
-
-    cout << endl;
+    cout << endl ;
 }
 int main()
 {
-    int n = 110;
+    int n = 50;
     cout << "Prime numbers in range " << n << " are : ";
-    printPrimeNumbers_Eratosthness(n);
+    printPrimeNumbers_Optimization3(n);
     return 0;
 }

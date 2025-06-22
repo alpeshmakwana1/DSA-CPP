@@ -49,6 +49,7 @@ int main(){
     int a = 100;
     int b = 18;
     cout << "GCD of " << a << " and " << b << " is: " << euclideanGCD(a, b) << endl;
+    cout << "GCD of " << a << " and " << b << " is: " << iterativeGCD(a, b) << endl;
 
     return 0;
 }

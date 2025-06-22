@@ -76,8 +76,8 @@ bool isPrimeMostEfficient(int n)
 int main()
 {
 
-    int num = 7;
-    bool result = isPrimeMostEfficient(num);
+    int num = 8;
+    bool result = isPrimeEfficient(num);
     cout << "Is " << num << " a prime number? " << (result ? "Yes" : "No") << endl;
     return 0;
 }
