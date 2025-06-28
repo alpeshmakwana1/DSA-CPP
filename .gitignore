@@ -16,6 +16,7 @@ build/
 # Ignore log files
 *.log
 *.class
+*.txt
 
 # Ignore compiled files
 *.class

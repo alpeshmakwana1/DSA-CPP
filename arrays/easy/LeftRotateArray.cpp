@@ -11,20 +11,7 @@
  using namespace std;
  
  /**
-  * Function to print the elements of an array.
-  */
- void printArray(int arr[], int size) {
-    for (int i = 0; i < size; i++) {
-        std::cout << arr[i] << " ";
-    }
-    std::cout << std::endl;
- }
- 
- /**
   * Function to rotate an array to the right by one position.
-  * 
-  * @param arr The input array to be rotated.
-  * @param size The size of the input array.
   */
  void rotateArray(int arr[], int size) {
      // Store the first element in a temporary variable
@@ -37,6 +24,16 @@
      arr[size - 1] = temp;
  }
  
+  /*
+  * Function to print the elements of an array.
+  */
+ void printArray(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+ }
+
  int main(){
     int arr[5] = {1,2,3,4,5};
     rotateArray(arr,5);
