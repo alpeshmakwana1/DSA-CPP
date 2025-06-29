@@ -34,11 +34,7 @@ int euclideanGCD(int a, int b) {
     Space: O(1) - Due to recursion stack
 */
 int iterativeGCD(int a, int b) {
-    while (b != 0) {
-        //   int temp = a;
-        //   a = b;
-        //   b = temp % b; // Swap and compute remainder
-        
+    while (b != 0) {        
         a = a % b ;
         std::swap(a, b); 
     }
